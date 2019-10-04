@@ -13,53 +13,48 @@
 
 //Match = score for the player
 //Each guess Guesses Left:incriment down by 1. Guesses so far go up
-let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 let match = 0;
-let noMatch = 0; 
+let noMatch = 0;
 let guesses = 0;
-let guessesLeft = 10;
+let guessCount ='';
+let guessesLeft = 9;
+let losses = 0;
 
+//computer guess
+let computerGuess = letters[Math.floor(Math.random() * letters
+  .length)];
+
+console.log(computerGuess);
 //player guess 
+
 document.onkeyup = function () {
   let playerGuess = String.fromCharCode(event.keyCode). //learned this from RPS vid
-    toLocaleLowerCase();
+  toLocaleLowerCase();
 
-    console.log(playerGuess);
-//computer guess
-    let computerGuess = letters[Math.floor(Math.random()*letters
-      .length)];
+  console.log(playerGuess);
+  //letter does not match
+  if ((playerGuess != computerGuess)) {
+    noMatch++ + guesses++ + guessesLeft--;
+    console.log(noMatch);
+  }
 
-    console.log(computerGuess);
+ if ((playerGuess == computerGuess)) {
+    match++;
+    guessesLeft = 9;
+    console.log(match);
+  }
+  if (noMatch ==9) {
+    losses ++;
+    guessesLeft = 9;
+    console.log(losses);
+  }
 
-   //letter match alert
-    if ((playerGuess==computerGuess)){
-      match++;
-      console.log(match);
-    }
-    //letter does not match
-    if ((playerGuess!=computerGuess)){
-      noMatch++;
-      console.log(noMatch);
-    }   
-    if((playerGuess)){
-      guesses++ + guessesLeft--;
-      console.log(guesses);
-    }  
-   
-    if(guesses==10) { 
-      return;
-    
-    }
-
-      
-
- 
   var html = "<p> Press a letter to see if the Psychic is on the same WAVELENGTH as you!</p>" +
-  "<p>Match: " + match +"</p>" +
-  "<p>No Match: " + noMatch +"</p>" +
-  "<p>Guesses: " + guesses +"</p>" +
-  "<p>Guesses Left: " + guessesLeft +"</p>"
+    "<p>Wins: " + match + "</p>" +
+    "<p>Losses: " + losses + "</p>" +
+    "<p>Guesses Left: " + guessesLeft + "</p>" +
+    "<p>Guesses: " + guessCount + "</p>"
   document.querySelector('#psychicGame').innerHTML = html;
 
 }
-

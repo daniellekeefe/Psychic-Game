@@ -3,3 +3,18 @@ img{
     width: 100%;
 
 }
+
+//letter match alert
+if ((playerGuess==computerGuess)){
+  match++;
+  console.log(match);
+}
+//letter does not match
+if ((playerGuess!=computerGuess)){
+  noMatch++;
+  console.log(noMatch);
+}   
+if((playerGuess)){
+  guesses++ + guessesLeft--;
+  console.log(guesses);
+}  
