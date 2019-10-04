@@ -17,16 +17,16 @@ let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','
 let match = 0;
 let noMatch = 0; 
 let guesses = 0;
-let guessesLeft = 0;
+let guessesLeft = 10;
 
 //player guess 
 document.onkeyup = function () {
-  var playerGuess = String.fromCharCode(event.keyCode). //learned this from RPS vid
+  let playerGuess = String.fromCharCode(event.keyCode). //learned this from RPS vid
     toLocaleLowerCase();
 
     console.log(playerGuess);
 //computer guess
-    var computerGuess = letters[Math.floor(Math.random()*letters
+    let computerGuess = letters[Math.floor(Math.random()*letters
       .length)];
 
     console.log(computerGuess);
@@ -34,13 +34,32 @@ document.onkeyup = function () {
    //letter match alert
     if ((playerGuess==computerGuess)){
       match++;
-      alert('We are on the same wave length!!! '+ match);
+      console.log(match);
     }
     //letter does not match
     if ((playerGuess!=computerGuess)){
       noMatch++;
-      alert('My Crystal Ball is cloudy!!! '+ noMatch);
+      console.log(noMatch);
+    }   
+    if((playerGuess)){
+      guesses++ + guessesLeft--;
+      console.log(guesses);
+    }  
+   
+    if(guesses==10) { 
+      return;
+    
     }
-  }
-  
+
+      
+
+ 
+  var html = "<p> Press a letter to see if the Psychic is on the same WAVELENGTH as you!</p>" +
+  "<p>Match: " + match +"</p>" +
+  "<p>No Match: " + noMatch +"</p>" +
+  "<p>Guesses: " + guesses +"</p>" +
+  "<p>Guesses Left: " + guessesLeft +"</p>"
+  document.querySelector('#psychicGame').innerHTML = html;
+
+}
 
