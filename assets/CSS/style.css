@@ -4,7 +4,7 @@
 }
 html, body {
     height: 100%;
-    background-image: url(images/new.jpg);
+    background-image: url(images/psychics.jpg);
     width: 960px;
     margin:0 auto;
 }
@@ -18,7 +18,7 @@ h1 {
     margin: 0 auto;
     color: #ffffff;
     text-align: center;
-    background-color: #4aaaa5;
+    background-color: purple;
     font-family: 'Georgia', Times, Times New Roman, serif;
     font-size: xx-large;
     height: 40px;
@@ -36,8 +36,8 @@ p {
     margin: 0 auto;
     padding: 10px;
     margin: 0 auto;
-    color:#777777;
-    background-color:lightgray;
+    color:purple;
+    background-color:lightsteelblue;
     border-color: #dddddd;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
