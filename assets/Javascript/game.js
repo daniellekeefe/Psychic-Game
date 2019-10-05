@@ -41,7 +41,7 @@ document.onkeyup = function () {
     } else {
       losses++;
       if (losses == 9) {
-        console.log("don't quit your dayjob"); // console log that someone did pretty bad
+        console.log('Womp Womp YOU HAVE LOST'); // console log that someone did pretty bad
         alert('Womp Womp YOU HAVE LOST!');
         reset2();
       }
@@ -63,7 +63,7 @@ function reset() {
   guessesLeft = 9;
   computerGuess = letters[Math.floor(Math.random() * letters.length)];
   //note with console log to validate, kept in there to easily test  
-  console.log("crystal ball:", computerGuess);
+  console.log("comp guess reset", computerGuess);
 }
 
 function reset2() {
