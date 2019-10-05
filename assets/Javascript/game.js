@@ -16,7 +16,7 @@ document.onkeyup = function () {
   let playerGuess = String.fromCharCode(event.keyCode). //learned this from RPS vid
   toLocaleLowerCase();
   console.log(event.key) //suggestion from tutor as I was hoping to keep guesses only to valid alphabet letters
-  console.log(playerGuess);
+  //console.log(playerGuess);
 
   //match statement
   if ((playerGuess == computerGuess)) {
@@ -24,7 +24,9 @@ document.onkeyup = function () {
     reset();
     console.log(match);
     if (match == 9) {
-      console.log("Winner winner chicken dinner!") //console log of the success
+      console.log("you are the ultimate champion") //console log of the success
+      alert('YOU ARE THE CHAMP!!!');
+      reset2();
     }
     //if not matched move on to....
   } else {
@@ -39,7 +41,9 @@ document.onkeyup = function () {
     } else {
       losses++;
       if (losses == 9) {
-        console.log("You have LOST"); // console log that someone did pretty bad
+        console.log("don't quit your dayjob"); // console log that someone did pretty bad
+        alert('Womp Womp YOU HAVE LOST!');
+        reset2();
       }
       reset();
       console.log(losses);
@@ -59,5 +63,15 @@ function reset() {
   guessesLeft = 9;
   computerGuess = letters[Math.floor(Math.random() * letters.length)];
   //note with console log to validate, kept in there to easily test  
-  console.log("psychic reset:", computerGuess);
+  console.log("crystal ball:", computerGuess);
+}
+
+function reset2() {
+  guessCount = '';
+  guessesLeft = 9;
+  match = 0;
+  losses = 0;
+  computerGuess = letters[Math.floor(Math.random() * letters.length)];
+  //note with console log to validate, kept in there to easily test  
+  console.log("Restart cuz you are the winner:", computerGuess);
 }
