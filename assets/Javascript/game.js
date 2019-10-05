@@ -73,5 +73,5 @@ function reset2() {
   losses = 0;
   computerGuess = letters[Math.floor(Math.random() * letters.length)];
   //note with console log to validate, kept in there to easily test  
-  console.log("Restart cuz you are the winner:", computerGuess);
+  console.log("Restart cuz you are the ultimate winner or looser!", computerGuess);
 }
