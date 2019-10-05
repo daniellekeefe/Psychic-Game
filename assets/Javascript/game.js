@@ -24,7 +24,7 @@ document.onkeyup = function () {
     reset();
     console.log(match);
     if (match == 9) {
-      console.log("you are the ultimate champion") //console log of the success
+      console.log("Winner winner chicken dinner!") //console log of the success
     }
     //if not matched move on to....
   } else {
@@ -39,7 +39,7 @@ document.onkeyup = function () {
     } else {
       losses++;
       if (losses == 9) {
-        console.log("don't quit your dayjob"); // console log that someone did pretty bad
+        console.log("You have LOST"); // console log that someone did pretty bad
       }
       reset();
       console.log(losses);
@@ -59,5 +59,5 @@ function reset() {
   guessesLeft = 9;
   computerGuess = letters[Math.floor(Math.random() * letters.length)];
   //note with console log to validate, kept in there to easily test  
-  console.log("crystal ball:", computerGuess);
+  console.log("psychic reset:", computerGuess);
 }
